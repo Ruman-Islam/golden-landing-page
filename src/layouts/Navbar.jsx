@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import UseNav from '../hooks/useNav';
 
 const navItems = [
@@ -18,7 +18,10 @@ const Navbar = () => {
     
     return (
         <nav className={`${distance >= 100 ? 'nav-background-show ' : 'nav-background-hide '}`}>
-            <label className='logo'>AroundWorld</label>
+            <label className='logo'>
+                AroundWorld
+                <FontAwesomeIcon id='bar-icon' icon={faGlobe} />
+            </label>
             <input type="checkbox" id="toggler" />
             <label className="nav-toggler-icon" htmlFor="toggler">
                 <FontAwesomeIcon id='bar-icon' icon={faBars} />
