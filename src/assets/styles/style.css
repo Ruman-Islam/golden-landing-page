@@ -1,9 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&family=Montserrat:wght@300;400;500&display=swap');
 
-* {
+/* common styles */
+*, 
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
 }
 body {
     font-family: "Montserrat", sans-serif;
@@ -14,4 +20,180 @@ img {
 
 h1 {
     font-weight: 700;
+}
+/* ..................... */
+
+/* header part */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+    padding: 0 15rem;
+}
+.header {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/2057352.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.header-content-right, .header-content-left {
+    flex: 1;
+    color: #fff;
+}
+.header-content-left h1 {
+  font-size: 10rem;
+  margin-bottom: 1.5rem;
+}
+.header-content-left p {
+  font-size: 1.3rem;
+  line-height: 2;
+  padding: 0 0 5rem;
+}
+.header-content-left button {
+  font-size: 1.5rem;
+  background-color: #438E72;
+  color: #fff;
+  padding: 2rem 3rem;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.header-content-left button span {
+  margin-right: 2rem;
+}
+
+/* Nav */
+.nav-background-show {
+    background-color: #438e73f6;
+    transition: .3s ease-in-out;
+}
+.nav-background-hide {
+    background-color: transparent;
+    transition: .3s ease-in-out;
+}
+.logo {
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: #fff;
+}
+nav {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    padding: 0 15rem;
+}
+.navigations {
+    display: flex;
+    align-items: center;
+}
+.navigations a {
+    margin-right: 2rem;
+    text-transform: uppercase;
+}
+#toggler {
+    display: none;
+}
+.nav-toggler-icon {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+}
+.nav-item a {
+    position: relative;
+    letter-spacing: 0.5px;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 0 10px;
+    font-weight: 500;
+}
+.nav-item a::after {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    letter-spacing: 0.5px;
+    font-size: 1.3rem;
+    transition: 0.3s;
+}
+.nav-item a:hover::after{
+   width: 100%;
+}
+.nav-item .active::after {
+   width: 100%;
+}
+#check, .checkBtn {
+    display: none;
+}
+/* ........ */
+/* ........................ */
+
+@media (max-width: 1023px) {
+.nav-background-show {
+    background-color: #438e73;
+    transition: .3s ease-in-out;
+}
+nav, .overlay {
+    padding: 0 1rem;
+}
+.logo {
+    font-size: 1.1rem;
+}
+nav .navigations a {
+    margin-right: 0;
+    color: black;
+    font-weight: 700;
+}
+nav .navigations li {
+    margin-bottom: 1rem;
+}
+nav .nav-toggler-icon {
+    display: block;
+}
+.navigations {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 120px;
+    left: -1000px;
+    width: 100%;
+    padding: 15px 0;
+    background-color: rgba(255, 255, 255, 0.938);
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    z-index: 5;
+
+}
+.nav-item a::after {
+    background-color: #438e73;
+}
+#toggler:checked ~ .navigations {
+    left: 0;
+    transition: 0.5s ease-in-out;
+    opacity: 1;
+}
+#toggler:checked ~ .navigations,#toggler:checked ~ nav {
+    left: 0;
+    transition: 0.5s ease-in-out;
+    opacity: 1;
+}
 }

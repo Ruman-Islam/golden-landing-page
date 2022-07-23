@@ -1,12 +1,14 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faComputer } from '@fortawesome/free-solid-svg-icons'
+import About from '../components/About';
+import Header from '../components/Header';
+import Navbar from '../components/Navbar';
 
 const Home = () => {
     return (
-        <div>
-            <h1>This is home page</h1>
-            <FontAwesomeIcon icon={faComputer} />
+        <div className='home'>
+            <Navbar />
+            <Header />
+            <About />
         </div>
     );
 };
