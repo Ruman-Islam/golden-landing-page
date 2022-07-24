@@ -1,5 +1,5 @@
 import React from 'react';
-import About from '../components/About';
+// import About from '../components/About';
 import Header from '../components/Header';
 import Navbar from '../layouts/Navbar';
 
@@ -8,7 +8,7 @@ const Home = () => {
         <div className='home'>
             <Navbar />
             <Header />
-            <About />
+            {/* <About /> */}
         </div>
     );
 };
